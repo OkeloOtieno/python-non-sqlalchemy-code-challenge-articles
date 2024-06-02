@@ -45,7 +45,6 @@ class Article:
             self._magazine = new_magazine
         else:
             TypeError("Magazine must be an instance of Magazine")
-    #pass.
 
 class Author:
     def __init__(self, name):
@@ -83,7 +82,7 @@ class Author:
             return topic_areas
         else:
             return None
-        #pass.
+        
 
 
 class Magazine:
@@ -123,7 +122,7 @@ class Magazine:
         return [article for article in Article.all if self == article.magazine]
 
     def contributors(self):
-        return list({article.author for article in self.articles()})
+        return list(set(author for article in self.articles() for author in article.authors))
 
     def article_titles(self):
         article_titles = [magazine.title for magazine in self.articles()]
@@ -149,7 +148,6 @@ class Magazine:
             return list_of_authors
         else:
             return None
-        #pass.class Article:
     all = []
 
     def __init__(self, author, magazine, title):
@@ -196,7 +194,7 @@ class Magazine:
             self._magazine = new_magazine
         else:
             TypeError("Magazine must be an instance of Magazine")
-    #pass.
+
 
 class Author:
     def __init__(self, name):
@@ -234,8 +232,7 @@ class Author:
             return topic_areas
         else:
             return None
-        #pass.
-
+      
 
 class Magazine:
     def __init__(self, name, category):
@@ -300,4 +297,4 @@ class Magazine:
             return list_of_authors
         else:
             return None
-        #pass.
+        
